@@ -2,7 +2,7 @@ SHELL := /bin/bash
 
 
 POETRY_VERSION = $$(cat $$PWD/Dockerfile | grep POETRY_VERSION= | grep -o -P '(?<==).*')
-SERVICE_NAME = paint-calculator
+SERVICE_NAME = mutualizo-api
 
 
 poetry-install-config:
