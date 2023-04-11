@@ -2,25 +2,25 @@ from src.api.services.average_words_length import get_average_words_length
 
 
 class TestAverageWordsLength:
-    async def test_compute_average_words_length(self) -> None:
+    async def test_get_average_words_length(self) -> None:
         sentence = "Hi all, my name is Tom... I am originally from Brazil."
         result = await get_average_words_length(sentence)
 
         assert result == {"average_words_length": 3.5454545454545454}
 
-    async def test_compute_average_words_length_one_word(self) -> None:
+    async def test_get_average_words_length_one_word(self) -> None:
         sentence = "Mutualizo!!!"
         result = await get_average_words_length(sentence)
 
         assert result == {"average_words_length": 9}
 
-    async def test_compute_average_words_length_repetitive_word(self) -> None:
+    async def test_get_average_words_length_repetitive_word(self) -> None:
         sentence = "Hello. Hello? Hello! Hello!!!"
         result = await get_average_words_length(sentence)
 
         assert result == {"average_words_length": 5}
 
-    async def test_compute_average_words_length_loren_ipsum(self) -> None:
+    async def test_get_average_words_length_loren_ipsum(self) -> None:
         sentence = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. "
         "Nullam fermentum finibus justo, ac pellentesque metus tincidunt a. "
         "Quisque vel arcu id lacus euismod malesuada. Vestibulum sed feugiat "
