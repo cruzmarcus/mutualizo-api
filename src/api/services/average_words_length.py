@@ -1,9 +1,7 @@
-import re
-
 from src.api.services.tools import utils
 
 
-async def get_average_words_length(sentence: str) -> float:
+async def get_average_words_length(sentence: str) -> dict[str, float]:
     """
     Service layer for the endpoint /average-words-length.
     The function processes the average value of the words length.
@@ -11,4 +9,7 @@ async def get_average_words_length(sentence: str) -> float:
 
     words = utils.remove_punctuations_marks(sentence)
 
-    return sum(len(word) for word in words) / float(len(words))
+    return {
+        "average_words_length": sum(len(word) for word in words)
+        / float(len(words))
+    }

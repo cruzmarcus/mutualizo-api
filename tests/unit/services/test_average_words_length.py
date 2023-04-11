@@ -6,19 +6,19 @@ class TestAverageWordsLength:
         sentence = "Hi all, my name is Tom... I am originally from Brazil."
         result = await get_average_words_length(sentence)
 
-        assert result == 3.5454545454545454
+        assert result == {"average_words_length": 3.5454545454545454}
 
     async def test_compute_average_words_length_one_word(self) -> None:
         sentence = "Mutualizo!!!"
         result = await get_average_words_length(sentence)
 
-        assert result == 9
+        assert result == {"average_words_length": 9}
 
     async def test_compute_average_words_length_repetitive_word(self) -> None:
         sentence = "Hello. Hello? Hello! Hello!!!"
         result = await get_average_words_length(sentence)
 
-        assert result == 5
+        assert result == {"average_words_length": 5}
 
     async def test_compute_average_words_length_loren_ipsum(self) -> None:
         sentence = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. "
@@ -36,4 +36,4 @@ class TestAverageWordsLength:
 
         result = await get_average_words_length(sentence)
 
-        assert result == 5.875
+        assert result == {"average_words_length": 5.875}

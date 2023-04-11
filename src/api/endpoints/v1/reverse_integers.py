@@ -1,12 +1,13 @@
 from fastapi import APIRouter, status
 
+from src.api import models
 from src.api.services.reverse_integers import get_reverse_integers
 
 router = APIRouter()
 
 
 @router.get("/reverse-integers", status_code=status.HTTP_200_OK)
-async def reverse_integers(number: int) -> str:
+async def reverse_integers(number: int) -> models.ReverseIntegersResponse:
     """
     Given an integer, the endpoint must receive an integer as
     a parameter and return the integer with inverted digits.
