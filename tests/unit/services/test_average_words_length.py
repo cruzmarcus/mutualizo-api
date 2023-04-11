@@ -1,22 +1,22 @@
-from src.api.services.average_words_length import compute_average_words_length
+from src.api.services.average_words_length import get_average_words_length
 
 
 class TestReverseIntegers:
     async def test_compute_average_words_length(self) -> None:
         sentence = "Hi all, my name is Tom... I am originally from Brazil."
-        result = await compute_average_words_length(sentence)
+        result = await get_average_words_length(sentence)
 
         assert result == 3.5454545454545454
 
     async def test_compute_average_words_length_one_word(self) -> None:
         sentence = "Mutualizo!!!"
-        result = await compute_average_words_length(sentence)
+        result = await get_average_words_length(sentence)
 
         assert result == 9
-    
+
     async def test_compute_average_words_length_repetitive_word(self) -> None:
         sentence = "Hello. Hello? Hello! Hello!!!"
-        result = await compute_average_words_length(sentence)
+        result = await get_average_words_length(sentence)
 
         assert result == 5
 
@@ -34,6 +34,6 @@ class TestReverseIntegers:
         "Aenean eu elit luctus, cursus elit ut, tincidunt ligula. Etiam "
         "interdum lorem vel urna blandit lobortis."
 
-        result = await compute_average_words_length(sentence)
+        result = await get_average_words_length(sentence)
 
         assert result == 5.875

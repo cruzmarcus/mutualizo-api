@@ -1,6 +1,6 @@
 from fastapi import APIRouter, status
 
-from src.api.services.reverse_integers import compute_reverse_integers
+from src.api.services.reverse_integers import get_reverse_integers
 
 router = APIRouter()
 
@@ -12,4 +12,4 @@ async def reverse_integers(number: int) -> str:
     a parameter and return the integer with inverted digits.
     Note: The integer can be positive or negative.
     """
-    return await compute_reverse_integers(number)
+    return await get_reverse_integers(number)

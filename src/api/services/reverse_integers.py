@@ -1,4 +1,4 @@
-async def compute_reverse_integers(number: int) -> str:
+async def get_reverse_integers(number: int) -> str:
     """
     Service layer for the endpoint /reverse-integers.
     The function can process number negative, positive or zero.
