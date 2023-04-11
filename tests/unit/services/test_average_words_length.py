@@ -1,7 +1,7 @@
 from src.api.services.average_words_length import get_average_words_length
 
 
-class TestReverseIntegers:
+class TestAverageWordsLength:
     async def test_compute_average_words_length(self) -> None:
         sentence = "Hi all, my name is Tom... I am originally from Brazil."
         result = await get_average_words_length(sentence)
